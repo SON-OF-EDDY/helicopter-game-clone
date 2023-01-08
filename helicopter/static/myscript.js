@@ -34,12 +34,12 @@
 
   //let heloBoom = new Audio('helo_boom.m4a')
   //"{% static 'my_app/example.jpg' %}"
-  let heloBoom = new Audio("/static/helo_boom.m4a")
+  let heloBoom = new Audio("/staticfiles/helo_boom.m4a")
 
-  let heloUp = new Audio('/static/helo_up_2.mp3')
+  let heloUp = new Audio('/staticfiles/helo_up_2.mp3')
 
   //let heloDown = new Audio('helo_down_2.mp3')
-  let heloFly= new Audio('/static/helo_track_2.mp3')
+  let heloFly= new Audio('/staticfiles/helo_track_2.mp3')
 
   let currentScore = 0
 
@@ -61,14 +61,14 @@
 
   //initialisation of heloSprite
 
-  const spriteArray = ['/static/big_1.png','/static/big_2.png','/static/big_3.png','/static/big_4.png']
-  const deathArray = ['/static/death_1.png','/static/death_2.png','/static/death_3.png','/static/death_4.png','/static/death_5.png','/static/death_6.png','/static/death_7.png','/static/death_8.png']
+  const spriteArray = ['/staticfiles/big_1.png','/staticfiles/big_2.png','/staticfiles/big_3.png','/staticfiles/big_4.png']
+  const deathArray = ['/staticfiles/death_1.png','/staticfiles/death_2.png','/staticfiles/death_3.png','/staticfiles/death_4.png','/staticfiles/death_5.png','/staticfiles/death_6.png','/staticfiles/death_7.png','/staticfiles/death_8.png']
   let spriteIndex = 0
   let deathIndex = 0
   let heloSprite = new Image ()
   heloSprite.src = spriteArray[spriteIndex]
   let smokeSprite = new Image ()
-  smokeSprite.src = '/static/smoke_3.png'
+  smokeSprite.src = '/staticfiles/smoke_3.png'
 
   let screenWidth = Math.floor(window.innerWidth * 0.6)
 
@@ -942,7 +942,7 @@
         heloUp.volume = 0.25
         //heloDown.currentTime = 0
 
-        smokeSprite.src = '/static/smoke_3.png'
+        smokeSprite.src = '/staticfiles/smoke_3.png'
 
         mouseIsPressed = false
 
