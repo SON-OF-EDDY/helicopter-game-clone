@@ -1,0 +1,214 @@
+#start {
+    background-color: #66ff66;
+    width:10vw;
+    height:5vw;
+    border-style:solid;
+    border-width:3px;
+    border-color: black;
+    font-family: 'Press Start 2P';
+    font-size: 1vw;
+    transition:ease 0.25s;
+            cursor: pointer;
+  }
+
+  #login {
+    background-color: #66ff66;
+    width:10vw;
+    height:2.5vw;
+    border-style:solid;
+    border-width:3px;
+    border-color: black;
+    font-family: 'Press Start 2P';
+    font-size: 1vw;
+    transition:ease 0.25s;
+            cursor: pointer;
+  }
+
+  #notice {
+    font-family: 'Press Start 2P';
+    font-size: 2.5vw;
+    text-align: center;
+  }
+
+  .unselectable {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+
+  #start:disabled {
+    pointer-events: none;
+    opacity: 50%;
+    border-width:1px;
+  }
+
+  #start:hover:enabled {
+            transform: scale(1.15);
+    border-width:6px;
+        }
+
+  #login:disabled {
+    pointer-events: none;
+    opacity: 50%;
+    border-width:1px;
+  }
+
+  #login:hover:enabled {
+            transform: scale(1.15);
+    border-width:6px;
+        }
+
+  #container{
+    display: flex;
+    background-color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    border-style: solid;
+    border-color:transparent;
+    border: width 1px;
+  }
+
+  #mini-container-one{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10vh;
+    border-style: solid;
+    border-color:transparent;
+    border: width 1px;
+  }
+
+  #mini-container-two{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    gap: 1vh;
+    justify-content: space-evenly;
+    align-items: center;
+    border-style: solid;
+    border-color:transparent;
+    border: width 1px;
+  }
+
+  #mini-container-three{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    gap: 1vh;
+    justify-content: space-evenly;
+    align-items: center;
+    border-style: solid;
+    border-color:transparent;
+    border: width 1px;
+  }
+
+  #username {
+    font-family: 'Press Start 2P';
+    width:9.5vw;
+    font-size: 1vw;
+    text-align: center;
+  }
+
+  #password {
+    font-family: 'Press Start 2P';
+    width:9.5vw;
+    font-size: 1vw;
+    text-align: center;
+  }
+
+
+
+  table,td {
+    width:20vw;
+    font-size: 0.6vw;
+    font-family: 'Press Start 2P';
+    border: 0.5px solid black;
+
+    text-align: center;
+  }
+
+  th {
+    width:20vw;
+    font-size: 1vw;
+    font-family: 'Press Start 2P';
+    font-weight: 900px;
+    color: black;
+    border: 0.5px solid black;
+
+    text-align: center;
+  }
+
+  #my_canvas {
+    font-family: 'Press Start 2P';
+    background-color: white;
+    border-style: solid;
+    border-color:black;
+    border-width:3px;
+    width: 60vw;
+    height:42vw;
+
+  }
+
+  p {
+    font-family: 'Press Start 2P';
+    font-size: 1vw;
+    text-align: center;
+  }
+
+  #notice-two {
+    width:20vw;
+    font-family: 'Press Start 2P';
+    font-size: 1vw;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  #notice-three {
+    width:20vw;
+    font-family: 'Press Start 2P';
+    font-size: 1vw;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  #notice-four {
+    width:20vw;
+    font-family: 'Press Start 2P';
+    font-size: 1vw;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  #notice-five {
+    width:20vw;
+    font-family: 'Press Start 2P';
+    font-size: 1vw;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  #notice {
+    font-family: 'Press Start 2P';
+    font-size: 2vw;
+  }
