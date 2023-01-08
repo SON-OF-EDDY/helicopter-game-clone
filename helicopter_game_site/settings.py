@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l4cjf!2i725bxeuiuup)l7s@saj9y%*@+!)a%lf#a5@kmqzap$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'helicopter.apps.HelicopterConfig'
+    'helicopter.apps.HelicopterConfig',
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
