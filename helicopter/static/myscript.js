@@ -1056,7 +1056,6 @@
         window.deathHelo = window.setInterval(deathAnimation,500/deathArray.length)
 
 
-
         startButton.disabled = true
         usernameInput.classList.add('unselectable')
 
