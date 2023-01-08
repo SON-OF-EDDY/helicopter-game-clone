@@ -1052,7 +1052,7 @@
         window.invertModFactorTimer = window.setInterval(invertModFactor,2000)
         window.invertModFactorTimerLower = window.setInterval(invertModFactorLower,2000)
         window.incrementHeloScore = window.setInterval(incrementScore,1000/20)
-        window.animateHelicopter = window.setInterval(animateHelo,1000/30)
+        window.animateHelicopter = window.setInterval(animateHelo,1000/60)
         window.deathHelo = window.setInterval(deathAnimation,500/deathArray.length)
 
 
