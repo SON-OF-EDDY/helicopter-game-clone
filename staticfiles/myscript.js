@@ -894,6 +894,7 @@
           heloSprite.src = deathArray[deathIndex]
 
           if (deathIndex < deathArray.length) {
+            console.log(deathArray[deathIndex])
             deathIndex++
           } else {
             spriteIndex = 0
