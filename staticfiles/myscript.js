@@ -62,14 +62,21 @@
   //initialisation of heloSprite
 
   //const spriteArray = ['/static/big_1.png','/static/big_2.png','/static/big_3.png','/static/big_4.png']
-  const spriteArray = ['/static/big_1.png']
+
+  //const spriteArray = ['/static/big_1.png','/static/big_2.png']
   const deathArray = ['/static/death_1.png','/static/death_2.png','/static/death_3.png','/static/death_4.png','/static/death_5.png','/static/death_6.png','/static/death_7.png','/static/death_8.png']
+  //const deathArray = ['/static/death_1.png']
   let spriteIndex = 0
   let deathIndex = 0
+
   let heloSprite = new Image ()
-  heloSprite.src = spriteArray[spriteIndex]
+
+
+  //heloSprite.src = spriteArray[spriteIndex]
+  heloSprite.src = '/static/helos.png'
   let smokeSprite = new Image ()
   smokeSprite.src = '/static/smoke_3.png'
+  let spriteFactor = 0
 
   let screenWidth = Math.floor(window.innerWidth * 0.6)
 
@@ -406,7 +413,12 @@
           ctx.fillRect(HeloX,HeloY,HeloWidth,HeloHeight)
 
           //apply image to helo rectangle
-          ctx.drawImage(heloSprite,HeloX,HeloY,HeloWidth,HeloHeight)
+          //ctx.drawImage(heloSprite,sx,sy,HeloX,HeloY,HeloWidth,HeloHeight)
+          ctx.drawImage(heloSprite,0,(heloSprite.height*0.25*spriteFactor),heloSprite.width,heloSprite.height/4,HeloX,HeloY,HeloWidth,HeloHeight)
+
+
+
+
 
 
 
@@ -879,9 +891,13 @@
 
 
       function animateHelo () {
-        spriteIndex = (spriteIndex + 1) % (spriteArray.length)
 
-        heloSprite.src = spriteArray[spriteIndex]
+        //spriteIndex = (spriteIndex + 1) % (spriteArray.length)
+
+        //heloSprite.src = spriteArray[spriteIndex]
+        spriteFactor = (spriteFactor+1) % 4
+
+
 
       }
 
@@ -891,15 +907,15 @@
 
         if (gameOver == true) {
 
-          heloSprite.src = deathArray[deathIndex]
+          //heloSprite.src = deathArray[deathIndex]
 
           if (deathIndex < deathArray.length) {
-            console.log(deathArray[deathIndex])
+            console.log(heloSprite.src)
             deathIndex++
           } else {
             spriteIndex = 0
             deathIndex = 0
-            heloSprite.src = spriteArray[spriteIndex]
+            //heloSprite.src = spriteArray[spriteIndex]
             clearInterval(window.deathHelo)
             clearInterval(window.rendertimer)
           }
@@ -1014,7 +1030,7 @@
 
         spriteIndex = 0
         deathIndex = 0
-        heloSprite.src = spriteArray[spriteIndex]
+        //heloSprite.src = spriteArray[spriteIndex]
 
         smokeSize = (screenWidth * 0.25) / smokeArraySize
         smokeArrayXspacing = smokeSize
