@@ -64,15 +64,15 @@
   //const spriteArray = ['/static/big_1.png','/static/big_2.png','/static/big_3.png','/static/big_4.png']
 
   //const spriteArray = ['/static/big_1.png','/static/big_2.png']
-  const deathArray = ['/static/death_1.png','/static/death_2.png','/static/death_3.png','/static/death_4.png','/static/death_5.png','/static/death_6.png','/static/death_7.png','/static/death_8.png']
+  //const deathArray = ['/static/death_1.png','/static/death_2.png','/static/death_3.png','/static/death_4.png','/static/death_5.png','/static/death_6.png','/static/death_7.png','/static/death_8.png']
   //const deathArray = ['/static/death_1.png']
-  let spriteIndex = 0
+  //let spriteIndex = 0
   let deathIndex = 0
 
   let heloSprite = new Image ()
 
 
-  //heloSprite.src = spriteArray[spriteIndex]
+
   heloSprite.src = '/static/helos.png'
   let smokeSprite = new Image ()
   smokeSprite.src = '/static/smoke_3.png'
@@ -763,16 +763,39 @@
 
         //if at least one point is within the bounds its gameover!
 
-        const myPoints = [[HeloX ,HeloY],
-        [HeloX+(HeloWidth*0.94),HeloY + (HeloHeight * 0.084)],
-        [HeloX,HeloY+HeloHeight*0.579],
-        [HeloX+HeloWidth*0.881,HeloY+HeloHeight*0.785],
+        const myPoints =
+
+        //top left corner
+        [[HeloX ,HeloY],
+
+        //top right corner
+        [HeloX+(HeloWidth),HeloY],
+
+        //left side, middle
+        [HeloX,HeloY+HeloHeight*0.458],
+
+        // nose of helo
+        [HeloX+HeloWidth*0.813,HeloY+HeloHeight*0.865],
+
+        //top side middle
         [HeloX + HeloWidth/2,HeloY],
-        [HeloX + HeloWidth/2,HeloY+HeloHeight],
-        [HeloX+HeloWidth*0.25,HeloY+HeloHeight*0.579],
-        [HeloX + HeloWidth*0.325,HeloY+HeloHeight*0.723],
-        [HeloX + HeloWidth*0.671,HeloY+HeloHeight],
-        [HeloX + HeloWidth*0.770,HeloY+HeloHeight*0.860]]
+
+        //ALONG THE BOTTOM...
+
+        //bottom side middle
+        [HeloX + HeloWidth/2,HeloY+HeloHeight*0.792],
+
+        // 0.25 along width, ...
+        [HeloX+HeloWidth*0.25,HeloY+HeloHeight*0.541],
+
+        // 0.325 along width,...
+        [HeloX + HeloWidth*0.325,HeloY+HeloHeight*0.688],
+
+        // 0.671 along width,...
+        [HeloX + HeloWidth*0.671,HeloY+HeloHeight*0.865],
+
+        // 0.139 along width,...
+        [HeloX + HeloWidth*0.139,HeloY+HeloHeight*0.604]]
 
         //check x values
         for (const point of myPoints) {
@@ -892,9 +915,7 @@
 
       function animateHelo () {
 
-        //spriteIndex = (spriteIndex + 1) % (spriteArray.length)
 
-        //heloSprite.src = spriteArray[spriteIndex]
         spriteFactor = (spriteFactor+1) % 4
 
 
@@ -903,24 +924,28 @@
 
       function deathAnimation () {
 
-
-
         if (gameOver == true) {
 
-          //heloSprite.src = deathArray[deathIndex]
+          heloSprite.src = "/static/helosD.png"
+          spriteFactor = deathIndex
 
-          if (deathIndex < deathArray.length) {
-            console.log(heloSprite.src)
+          //ctx.drawImage(heloSprite,0,(heloSprite.height*0.25*spriteFactor),heloSprite.width,heloSprite.height/4,HeloX,HeloY,HeloWidth,HeloHeight)
+
+          if (deathIndex < 4) {
+            console.log(deathIndex)
             deathIndex++
+
+
           } else {
-            spriteIndex = 0
+            //spriteIndex = 0
             deathIndex = 0
-            //heloSprite.src = spriteArray[spriteIndex]
+            console.log('closing!')
+
             clearInterval(window.deathHelo)
             clearInterval(window.rendertimer)
+            heloSprite.src = "/static/helos.png"
           }
         }
-
 
       }
 
@@ -958,6 +983,7 @@
         heloFly.volume = 0.01
         heloUp.currentTime = 0
         heloUp.volume = 0.25
+
         //heloDown.currentTime = 0
 
         smokeSprite.src = '/static/smoke_3.png'
@@ -1030,7 +1056,6 @@
 
         spriteIndex = 0
         deathIndex = 0
-        //heloSprite.src = spriteArray[spriteIndex]
 
         smokeSize = (screenWidth * 0.25) / smokeArraySize
         smokeArrayXspacing = smokeSize
@@ -1071,7 +1096,7 @@
         window.invertModFactorTimerLower = window.setInterval(invertModFactorLower,2000)
         window.incrementHeloScore = window.setInterval(incrementScore,1000/20)
         window.animateHelicopter = window.setInterval(animateHelo,1000/30)
-        window.deathHelo = window.setInterval(deathAnimation,500/deathArray.length)
+        window.deathHelo = window.setInterval(deathAnimation,500/4)
 
 
 
