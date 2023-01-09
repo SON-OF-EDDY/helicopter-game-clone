@@ -61,7 +61,8 @@
 
   //initialisation of heloSprite
 
-  const spriteArray = ['/static/big_1.png','/static/big_2.png','/static/big_3.png','/static/big_4.png']
+  //const spriteArray = ['/static/big_1.png','/static/big_2.png','/static/big_3.png','/static/big_4.png']
+  const spriteArray = ['/static/big_1.png']
   const deathArray = ['/static/death_1.png','/static/death_2.png','/static/death_3.png','/static/death_4.png','/static/death_5.png','/static/death_6.png','/static/death_7.png','/static/death_8.png']
   let spriteIndex = 0
   let deathIndex = 0
