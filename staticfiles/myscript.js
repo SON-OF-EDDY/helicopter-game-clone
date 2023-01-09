@@ -70,10 +70,11 @@
   let deathIndex = 0
 
   let heloSprite = new Image ()
-
-
+  let heloSprite2 = new Image ()
 
   heloSprite.src = '/static/helos.png'
+  heloSprite2.src = '/static/helosD.png'
+
   let smokeSprite = new Image ()
   smokeSprite.src = '/static/smoke_3.png'
   let spriteFactor = 0
